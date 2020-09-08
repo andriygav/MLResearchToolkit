@@ -2,6 +2,20 @@
 ML Research Toolkit
 *******************
 
+|test| |codecov| |docs|
+
+.. |test| image:: https://github.com/andriygav/MLResearchToolkit/workflows/test/badge.svg
+    :target: https://github.com/andriygav/MLResearchToolkit/tree/master
+    :alt: Test status
+    
+.. |codecov| image:: https://img.shields.io/codecov/c/github/andriygav/MLResearchToolkit/master
+    :target: https://github.com/andriygav/MLResearchToolkit/tree/master
+    :alt: Test coverage
+
+.. |docs| image:: https://github.com/andriygav/MLResearchToolkit/workflows/docs/badge.svg
+    :target: https://andriygav.github.io/MLResearchToolkit/
+    :alt: Build status
+
 This package provides some utilities for training machine learning models. In particular, it provides a package for sending messages to popular instant messengers.
 
 Notifications
