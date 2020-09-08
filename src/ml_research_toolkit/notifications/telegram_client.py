@@ -1,12 +1,28 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+The :mod:`ml_research_toolkit.notifications.telegram_client` contains classes:
+- :class:`ml_research_toolkit.notifications.telegram_client.TelegramUpdaterSingleton`
+- :class:`ml_research_toolkit.notifications.telegram_client.TelegramClient`
+"""
+from __future__ import print_function
+
+__docformat__ = 'restructuredtext'
+
 from telegram.ext import Updater
 from telegram.ext import CommandHandler
 
 class TelegramUpdaterSingleton(object):
+    r"""
+    Singleton class to prevent error while one Telegram updater load twice.
+    """
     _updater = dict()
 
     @staticmethod
     def get(token):
-        """
+        r"""
+        :return: returns updater which related to given token
+        :rtype: telegram.ext.Updater
         """
         if token not in TelegramUpdaterSingleton._updater:
             TelegramUpdaterSingleton._updater[token] = Updater(token=token, use_context=True)
@@ -25,6 +41,9 @@ class TelegramUpdaterSingleton(object):
 
 
 class TelegramClient(object):
+    r"""
+    Class for notification sender to telegram.
+    """
     def __init__(self, token=None, name=None):
         if token is None:
             raise ValueError('token must be specified')
@@ -53,9 +72,12 @@ class TelegramClient(object):
             context.bot.send_message(chat_id=update.effective_chat.id, text="Already not tracking: {}".format(str(self.name)))
         
     def send_text(self, text):
+        r"""
+        Sent simple text message to telegram.
+
+        :param text: message to send
+        :type text: str
+        """
         for chat_id in self._curent_chat_ids:
             self.updater.bot.send_message(chat_id, text)
-    
-    def send_photo(self, image):
-        raise NotImplementedError
     
