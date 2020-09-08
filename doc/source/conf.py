@@ -39,7 +39,7 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest',
               'sphinx.ext.autosummary', 'sphinx.ext.mathjax',
               'sphinx_rtd_theme']
 
-autodoc_mock_imports = ["python-telegram-bot"]
+autodoc_mock_imports = ["telegram"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
