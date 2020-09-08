@@ -18,6 +18,7 @@ Welcome to ML Research Toolkit!
    :caption: Get Started:
    
    installation.rst
+   example.rst
 
 .. toctree::
    :maxdepth: 2
