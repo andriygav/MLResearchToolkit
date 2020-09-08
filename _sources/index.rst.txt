@@ -23,7 +23,7 @@ Welcome to ML Research Toolkit!
    :maxdepth: 2
    :caption: Packages:
 
-   linear.rst
+   notifications.rst
 
 
 
