@@ -16,7 +16,7 @@ ML Research Toolkit
     :target: https://andriygav.github.io/MLResearchToolkit/
     :alt: Build status
     
-.. |readthedocs| image:: https://img.shields.io/readthedocs/mlresearchtoolkit/stable?label=latest
+.. |readthedocs| image:: https://readthedocs.org/projects/mlresearchtoolkit/badge/?version=latest
     :target: https://mlresearchtoolkit.readthedocs.io/en/latest/
     :alt: ReadTheDocs
 
