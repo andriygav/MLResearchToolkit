@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to ML Research Toolkit! &mdash; MLResearchToolkit  documentation</title>
+  <title>Installation &mdash; MLResearchToolkit  documentation</title>
   
 
   
@@ -94,13 +94,21 @@
 </ul>
 <p class="caption"><span class="caption-text">Get Started:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Welcome to ML Research Toolkit!</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="info.html">ML Research Toolkit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html">Changelog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="example.html">Example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-by-using-pypi">Installing by using PyPi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uninstall">Uninstall</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-from-github-source">Installing from GitHub source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Uninstall</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Packages:</span></p>
 <ul>
@@ -151,7 +159,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Welcome to ML Research Toolkit!</li>
+      <li>Installation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,33 +180,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-ml-research-toolkit">
-<h1>Welcome to ML Research Toolkit!<a class="headerlink" href="#welcome-to-ml-research-toolkit" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Main Info:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="info.html">ML Research Toolkit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Get Started:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Welcome to ML Research Toolkit!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example.html">Example</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+<li><p>Python 3.*</p></li>
+<li><p>pip 20.0.2</p></li>
 </ul>
+</div>
+<div class="section" id="installing-by-using-pypi">
+<h2>Installing by using PyPi<a class="headerlink" href="#installing-by-using-pypi" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install">
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3.6 -m pip install ml-research-toolkit
+</pre></div>
+</div>
+</div>
+<div class="section" id="uninstall">
+<h3>Uninstall<a class="headerlink" href="#uninstall" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3.6 -m pip uninstall ml-research-toolkit
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installing-from-github-source">
+<h2>Installing from GitHub source<a class="headerlink" href="#installing-from-github-source" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Install<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/andriygav/MLResearchToolkit.git
+python3.6 -m pip install ./MLResearchToolkit/src/
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Uninstall<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3.6 -m pip uninstall ml-research-toolkit
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
