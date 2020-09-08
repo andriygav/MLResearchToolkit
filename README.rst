@@ -2,7 +2,7 @@
 ML Research Toolkit
 *******************
 
-|test| |codecov| |docs|
+|test| |codecov| |docs| |readthedocs|
 
 .. |test| image:: https://github.com/andriygav/MLResearchToolkit/workflows/test/badge.svg
     :target: https://github.com/andriygav/MLResearchToolkit/tree/master
