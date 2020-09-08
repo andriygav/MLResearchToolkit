@@ -31,7 +31,7 @@ Notifications
 It provides a package for simple message sending to messengers during model training.
 
 The following messengers are currently supported:
-* Telegram
+  - Telegram
 
 Requirements and Installation
 =============================
