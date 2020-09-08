@@ -2,7 +2,7 @@
 ML Research Toolkit
 *******************
 
-|test| |codecov| |docs| |readthedocs|
+|test| |codecov| |docs| |readthedocs| |pypi|
 
 .. |test| image:: https://github.com/andriygav/MLResearchToolkit/workflows/test/badge.svg
     :target: https://github.com/andriygav/MLResearchToolkit/tree/master
@@ -19,6 +19,10 @@ ML Research Toolkit
 .. |readthedocs| image:: https://img.shields.io/readthedocs/mlresearchtoolkit/latest?label=readthedocs
     :target: https://mlresearchtoolkit.readthedocs.io/en/latest/
     :alt: ReadTheDocs
+
+.. |pypi| image:: https://img.shields.io/pypi/v/ml-research-toolkit
+    :target: https://pypi.org/project/ml-research-toolkit/
+    :alt: PyPI
 
 Basic information
 =================
