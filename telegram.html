@@ -171,8 +171,47 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="notifications">
-<h1>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-ml_research_toolkit.notifications.telegram_client">
+<span id="notifications"></span><h1>Notifications<a class="headerlink" href="#module-ml_research_toolkit.notifications.telegram_client" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#module-ml_research_toolkit.notifications.telegram_client" title="ml_research_toolkit.notifications.telegram_client"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ml_research_toolkit.notifications.telegram_client</span></code></a> contains classes:
+- <a class="reference internal" href="#ml_research_toolkit.notifications.telegram_client.TelegramUpdaterSingleton" title="ml_research_toolkit.notifications.telegram_client.TelegramUpdaterSingleton"><code class="xref py py-class docutils literal notranslate"><span class="pre">ml_research_toolkit.notifications.telegram_client.TelegramUpdaterSingleton</span></code></a>
+- <a class="reference internal" href="#ml_research_toolkit.notifications.telegram_client.TelegramClient" title="ml_research_toolkit.notifications.telegram_client.TelegramClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">ml_research_toolkit.notifications.telegram_client.TelegramClient</span></code></a></p>
+<dl class="py class">
+<dt id="ml_research_toolkit.notifications.telegram_client.TelegramClient">
+<em class="property">class </em><code class="sig-prename descclassname">ml_research_toolkit.notifications.telegram_client.</code><code class="sig-name descname">TelegramClient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ml_research_toolkit/notifications/telegram_client.html#TelegramClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml_research_toolkit.notifications.telegram_client.TelegramClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for notification sender to telegram.</p>
+<dl class="py method">
+<dt id="ml_research_toolkit.notifications.telegram_client.TelegramClient.send_text">
+<code class="sig-name descname">send_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ml_research_toolkit/notifications/telegram_client.html#TelegramClient.send_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml_research_toolkit.notifications.telegram_client.TelegramClient.send_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sent simple text message to telegram.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – message to send</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="ml_research_toolkit.notifications.telegram_client.TelegramUpdaterSingleton">
+<em class="property">class </em><code class="sig-prename descclassname">ml_research_toolkit.notifications.telegram_client.</code><code class="sig-name descname">TelegramUpdaterSingleton</code><a class="reference internal" href="_modules/ml_research_toolkit/notifications/telegram_client.html#TelegramUpdaterSingleton"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml_research_toolkit.notifications.telegram_client.TelegramUpdaterSingleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Singleton class to prevent error while one Telegram updater load twice.</p>
+<dl class="py method">
+<dt id="ml_research_toolkit.notifications.telegram_client.TelegramUpdaterSingleton.get">
+<em class="property">static </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ml_research_toolkit/notifications/telegram_client.html#TelegramUpdaterSingleton.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml_research_toolkit.notifications.telegram_client.TelegramUpdaterSingleton.get" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>returns updater which related to given token</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>telegram.ext.Updater</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

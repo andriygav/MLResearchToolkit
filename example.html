@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; MLResearchToolkit  documentation</title>
+  <title>Example &mdash; MLResearchToolkit  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Welcome to ML Research Toolkit!" href="installation.html" />
-    <link rel="prev" title="ML Research Toolkit" href="info.html" /> 
+    <link rel="next" title="Notifications" href="notifications.html" />
+    <link rel="prev" title="Welcome to ML Research Toolkit!" href="installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,16 +88,21 @@
             
             
               <p class="caption"><span class="caption-text">Main Info:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="info.html">ML Research Toolkit</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Get Started:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="installation.html">Welcome to ML Research Toolkit!</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="info.html">ML Research Toolkit</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Changelog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="example.html">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initialise-bot-wraper">Initialise Bot Wraper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#send-notification">Send notification</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html#indices-and-tables">Indices and tables</a></li>
@@ -151,14 +156,16 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Changelog</li>
+          <li><a href="installation.html">Welcome to ML Research Toolkit!</a> &raquo;</li>
+        
+      <li>Example</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/andriygav/MLResearchToolkit/blob/master/doc/source/changelog.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/andriygav/MLResearchToolkit/blob/master/doc/source/example.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -172,15 +179,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="changelog">
-<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<dl class="simple">
-<dt>v0.0.1</dt><dd><ul class="simple">
-<li><p>telegram bot for notification</p></li>
-<li><p>initial commit</p></li>
-</ul>
-</dd>
-</dl>
+  <div class="section" id="example">
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>It is recommended make virtualenv and install all next packages
+in this virtualenv.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ml</span><span class="o">-</span><span class="n">research</span><span class="o">-</span><span class="n">toolkit</span><span class="o">==</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Include packages.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ml_research_toolkit.notifications</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="initialise-bot-wraper">
+<h2>Initialise Bot Wraper<a class="headerlink" href="#initialise-bot-wraper" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">notificator</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;Your token&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Name of proccess&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="send-notification">
+<h2>Send notification<a class="headerlink" href="#send-notification" title="Permalink to this headline">¶</a></h2>
+<p>Before starting sending messages, you need to write message _/<a href="#id1"><span class="problematic" id="id2">start_</span></a> to the bot in the messenger. This is necessary so that the bot knows who needs information on a given task.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">notificator</span><span class="o">.</span><span class="n">send_text</span><span class="p">(</span><span class="s1">&#39;I send my first message!!!!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -191,10 +216,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="installation.html" class="btn btn-neutral float-right" title="Welcome to ML Research Toolkit!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="notifications.html" class="btn btn-neutral float-right" title="Notifications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="info.html" class="btn btn-neutral float-left" title="ML Research Toolkit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Welcome to ML Research Toolkit!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
