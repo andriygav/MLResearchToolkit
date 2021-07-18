@@ -20,6 +20,17 @@ import time
 import ssl
 import os
 
+def read_csv(path, featuresize):
+    data = None
+    for sep in [',', ';', '\t']:
+        data = pd.read_csv(path, sep=sep)
+        
+        if len(data.columns) == featuresize + 1:
+            break
+        else:
+            data = None
+    return data
+
 def _filededup(_type, folder):
     r"""
     :return: 
@@ -224,11 +235,7 @@ class UCI(object):
 
         links_to_download = []
 
-        if "Index" in links:
-            idx = links.index("Index")
-        else:
-            idx = len(links) - 2
-        for i in range(idx + 1, len(links)):
+        for i in range(len(links)):
             links_to_download.append(os.path.join(url, str(links[i])))
 
         try:
@@ -253,6 +260,7 @@ class UCI(object):
                     os.remove(filename)
                 _filededup('csv', cache_dir)
                 _filededup('data', cache_dir)
+                _filededup('names', cache_dir)
                 _filededup('train', cache_dir)
                 _fileclean(cache_dir, _types=['csv', 'data', 'train', 'names'])
 
@@ -279,10 +287,11 @@ class UCI(object):
         try:
             files = os.listdir(cache_dir)
             tags = list(map(lambda x: x.split('.')[-1], files))
-        
+
             if 'data' in tags:
-                dataset['data'] = pd.read_csv(
-                    os.path.join(cache_dir, files[tags.index('data')]))
+                dataset['data'] = read_csv(
+                    os.path.join(cache_dir, files[tags.index('data')]),
+                    dataset['meta']['Featuresize'])
 
                 if 'names' in tags:
                     with open(
@@ -290,8 +299,10 @@ class UCI(object):
                             cache_dir, files[tags.index('names')])) as f:
                         dataset['names'] = f.read()
             elif 'csv' in tags:
-                dataset['data'] = pd.read_csv(
-                    os.path.join(cache_dir, files[tags.index('csv')]))
+                dataset['data'] = read_csv(
+                    os.path.join(cache_dir, files[tags.index('csv')]),
+                    dataset['meta']['Featuresize'])
+                
         except Exception as e:
             logging.warning(
                 f'Something wrong with dataset `{name}` reading {str(e)}')
