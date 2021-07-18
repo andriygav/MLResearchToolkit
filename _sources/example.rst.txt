@@ -10,18 +10,32 @@ in this virtualenv.
 
 ::
 
-    ml-research-toolkit==0.0.1
+    ml-research-toolkit==0.0.2
 
-Include packages.
+Include packages importing.
 
 .. code:: python
     
     from ml_research_toolkit.notifications import TelegramClient
+    from ml_research_toolkit.datasets import UCI
 
+Datasets
+========
 
+.. code:: python
+    
+    datasets = UCI()
+    datasets.get_meta()
+
+    dataset = datasets.get_dataset('Abalone', enforce=True)
+
+    dataset['data'], dataset['meta']
+
+Notifications
+=============
 
 Initialise Bot Wraper
-=====================
+#####################
 
 .. code:: python
     
@@ -29,7 +43,7 @@ Initialise Bot Wraper
 
 
 Send notification
-=================
+#################
 
 Before starting sending messages, you need to write message ``/start`` to the bot in the messenger. This is necessary so that the bot knows who needs information on a given task. 
 
