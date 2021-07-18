@@ -1,18 +1,31 @@
-import pandas as pd
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+The :mod:`ml_research_toolkit.notifications.telegram_client` contains classes:
+- :class:`ml_research_toolkit.notifications.telegram_client.TelegramUpdaterSingleton`
+- :class:`ml_research_toolkit.notifications.telegram_client.TelegramClient`
+"""
+from __future__ import print_function
+
+__docformat__ = 'restructuredtext'
 
 import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
-import ssl
-import time
-import os
+import pandas as pd
 import requests
-import base64
 import zipfile
-import shutil
 import logging
-
+import base64
+import shutil
+import time
+import ssl
+import os
 
 def _filededup(_type, folder):
+    r"""
+    :return: 
+    :rtype: 
+    """
     files = os.listdir(folder)
     list_of_related_files = []
     for file in files:
@@ -30,6 +43,10 @@ def _filededup(_type, folder):
             os.path.join(folder, list_of_related_files[i][0]))
         
 def _fileclean(folder, _types = []):
+    r"""
+    :return: 
+    :rtype: 
+    """
     files = os.listdir(folder)
     for file in files:
         tag = file.split('.')[-1]
@@ -41,10 +58,21 @@ def _fileclean(folder, _types = []):
                 os.remove(delpath)
 
 class UCI(object):
+    r"""
+    Class for UCI datasets manager system.
+    """
     def __init__(self, 
                  enforce=False,
                  cache='.uci', 
                  url="https://archive.ics.uci.edu/ml/datasets.php"):
+        r"""
+        :param enforce: Rewrite all information in the cache
+        :type enforce: bool
+        :param cache: Cache directory for meta and dataset saving.
+        :type cache: str
+        :param url: URL for archive.ics.uci.edu can be changed during the time.
+        :type url: str
+        """
         self._cache = cache
         self._url = url
         self._enforce = enforce
@@ -65,6 +93,14 @@ class UCI(object):
         self._meta = None
 
     def get_meta(self, enforce=None):
+        r"""
+        Get meta infromation about all datasets in the site.
+
+        :param enforce: Enforce rewriting all metadata in 
+                        the cache or use cached data. 
+                        Default None: use initial value.
+        :type enforce: bool
+        """
         if self._meta is not None:
             return self._meta.copy()
         else:
@@ -74,7 +110,8 @@ class UCI(object):
         try:
             datasets = pd.read_html(self._url)
         except:
-            logging.warning("Could not read the table from UCI ML portal, Sorry!")
+            logging.warning(
+                "Could not read the table from UCI ML portal, Sorry!")
 
         df = datasets[5]
         nrows = df.shape[0]
@@ -105,7 +142,8 @@ class UCI(object):
         urls = dict()
         for tag in soup.find_all("a"):
             if isinstance(tag.contents[0], str):
-                urls[tag.contents[0].strip()] = tag.get_attribute_list('href')[0]
+                urls[tag.contents[0].strip()] = tag.get_attribute_list(
+                    'href')[0]
 
         url_lst = []
         relevant_names = df['Name'].values
@@ -220,7 +258,8 @@ class UCI(object):
 
         except Exception as e:
           shutil.rmtree(cache_dir)
-          logging.warning(f'Something wrong with dataset `{name}` downloading {str(e)}')
+          logging.warning(
+            f'Something wrong with dataset `{name}` downloading {str(e)}')
 
 
     def _get_dataset(self, name, enforce=None):
@@ -242,17 +281,29 @@ class UCI(object):
 
                 if 'names' in tags:
                     with open(
-                        os.path.join(cache_dir, files[tags.index('names')])) as f:
+                        os.path.join(
+                            cache_dir, files[tags.index('names')])) as f:
                         dataset['names'] = f.read()
             elif 'csv' in tags:
                 dataset['data'] = pd.read_csv(
                     os.path.join(cache_dir, files[tags.index('csv')]))
         except Exception as e:
-            logging.warning(f'Something wrong with dataset `{name}` reading {str(e)}')
+            logging.warning(
+                f'Something wrong with dataset `{name}` reading {str(e)}')
 
         return dataset
 
     def get_dataset(self, name, enforce=None):
+        r"""
+        Get dataset by given name.
+
+        :param name: Name of the dataset for downloading.
+        :type name: str
+        :param enforce: Enforce rewriting all metadata in 
+                        the cache or use cached data. 
+                        Default None: use initial value.
+        :type enforce: bool
+        """
         if self._meta is None:
             self._get_meta()
         return self._get_dataset(name, enforce=enforce)
