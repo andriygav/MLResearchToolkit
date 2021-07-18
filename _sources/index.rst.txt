@@ -25,6 +25,7 @@ Welcome to ML Research Toolkit!
    :caption: Packages:
 
    notifications.rst
+   datasets.rst
 
 
 
