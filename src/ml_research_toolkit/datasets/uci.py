@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-The :mod:`ml_research_toolkit.notifications.telegram_client` contains classes:
-- :class:`ml_research_toolkit.notifications.telegram_client.TelegramUpdaterSingleton`
-- :class:`ml_research_toolkit.notifications.telegram_client.TelegramClient`
+The :mod:`ml_research_toolkit.datasets.uci` contains classes:
+- :class:`ml_research_toolkit.datasets.uci.UCI`
 """
 from __future__ import print_function
 
