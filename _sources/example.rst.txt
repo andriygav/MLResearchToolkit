@@ -10,7 +10,7 @@ in this virtualenv.
 
 ::
 
-    ml-research-toolkit==0.0.2
+    ml-research-toolkit==0.0.3
 
 Include packages importing.
 
