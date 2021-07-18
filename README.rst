@@ -27,7 +27,7 @@ ML Research Toolkit
 Basic information
 =================
 
-This package provides some utilities for training machine learning models. In particular, it provides a package for sending messages to popular instant messengers.
+This package provides some utilities for training machine learning models. In particular, it provides a package for sending messages to popular instant messengers. Secondly, it provides a package to automatically interact with datasets from the `UCI <https://archive.ics.uci.edu/ml/index.php>`_ repository.
 
 Notifications
 -------------
@@ -36,6 +36,14 @@ It provides a package for simple message sending to messengers during model trai
 
 The following messengers are currently supported:
   - Telegram
+
+Datasets
+-------------
+
+It provides a package for automatically interact with datasets.
+
+The following datasets repository are currently supported:
+  - `UCI <https://archive.ics.uci.edu/ml/index.php>`_.
 
 Requirements and Installation
 =============================

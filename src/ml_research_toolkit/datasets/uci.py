@@ -191,7 +191,7 @@ class UCI(object):
         ID = base64.b64encode(name.encode("UTF-8")).decode("UTF-8")
         cache_dir = os.path.join(self._cache, self._dataset_dir, ID)
 
-        url = df.loc[self._meta['Name'] == name]['URL'].values[0]
+        url = self._meta.loc[self._meta['Name'] == name]['URL'].values[0]
         ctx = ssl.create_default_context()
         ctx.check_hostname = False
         ctx.verify_mode = ssl.CERT_NONE
@@ -254,7 +254,7 @@ class UCI(object):
                 _filededup('csv', cache_dir)
                 _filededup('data', cache_dir)
                 _filededup('train', cache_dir)
-                _fileclean(cache_dir, _types=['csv', 'data', 'train'])
+                _fileclean(cache_dir, _types=['csv', 'data', 'train', 'names'])
 
         except Exception as e:
           shutil.rmtree(cache_dir)
@@ -268,13 +268,18 @@ class UCI(object):
         ID = base64.b64encode(name.encode("UTF-8")).decode("UTF-8")
 
         dataset = dict()
+        temp = self._meta.loc[self._meta['Name'] == name].to_dict().items()
+        dataset['meta'] = {key: list(item.values())[0] for key, item in temp}
+        dataset['data'] = None
+
         cache_dir = os.path.join(self._cache, self._dataset_dir, ID)
         if not (os.path.exists(cache_dir) and not enforce):
             self._download_dataset(name)
 
-        files = os.listdir(cache_dir)
-        tags = list(map(lambda x: x.split('.')[-1], files))
         try:
+            files = os.listdir(cache_dir)
+            tags = list(map(lambda x: x.split('.')[-1], files))
+        
             if 'data' in tags:
                 dataset['data'] = pd.read_csv(
                     os.path.join(cache_dir, files[tags.index('data')]))
