@@ -262,7 +262,7 @@ class UCI(object):
             f'Something wrong with dataset `{name}` downloading {str(e)}')
 
 
-    def _get_dataset(self, name, enforce=None):
+    def _get_dataset(self, name, enforce=None, download=True):
         if enforce is None:
             enforce = self._enforce
         ID = base64.b64encode(name.encode("UTF-8")).decode("UTF-8")
@@ -273,7 +273,7 @@ class UCI(object):
         dataset['data'] = None
 
         cache_dir = os.path.join(self._cache, self._dataset_dir, ID)
-        if not (os.path.exists(cache_dir) and not enforce):
+        if not (os.path.exists(cache_dir) and not enforce) and download:
             self._download_dataset(name)
 
         try:
@@ -298,7 +298,7 @@ class UCI(object):
 
         return dataset
 
-    def get_dataset(self, name, enforce=None):
+    def get_dataset(self, name, enforce=None, download=True):
         r"""
         Get dataset by given name.
 
@@ -308,10 +308,13 @@ class UCI(object):
                         the cache or use cached data. 
                         Default None: use initial value.
         :type enforce: bool
+        :param download: Download dataset or not. 
+                         If False and dataset is not presented than return None.
+        :type download: bool
         """
         if self._meta is None:
             self._get_meta()
-        return self._get_dataset(name, enforce=enforce)
+        return self._get_dataset(name, enforce=enforce, download=download)
 
     def __len__(self):
         return len(self._meta)
