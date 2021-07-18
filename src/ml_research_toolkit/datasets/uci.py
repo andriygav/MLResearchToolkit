@@ -108,9 +108,10 @@ class UCI(object):
     def _download_meta(self):
         try:
             datasets = pd.read_html(self._url)
-        except:
+        except Exception as e:
             logging.warning(
                 "Could not read the table from UCI ML portal, Sorry!")
+            raise e
 
         df = datasets[5]
         nrows = df.shape[0]
