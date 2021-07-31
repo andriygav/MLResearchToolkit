@@ -8,9 +8,6 @@ from __future__ import print_function
 
 __docformat__ = 'restructuredtext'
 
-import urllib.request, urllib.parse, urllib.error
-from bs4 import BeautifulSoup
-import pandas as pd
 import requests
 import zipfile
 import logging
@@ -19,6 +16,10 @@ import shutil
 import time
 import ssl
 import os
+
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+import pandas as pd
 
 def read_csv(path, featuresize):
     data = None
