@@ -179,8 +179,47 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="uci-datasets">
-<h1>UCI Datasets<a class="headerlink" href="#uci-datasets" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-ml_research_toolkit.datasets.uci">
+<span id="uci-datasets"></span><h1>UCI Datasets<a class="headerlink" href="#module-ml_research_toolkit.datasets.uci" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#module-ml_research_toolkit.datasets.uci" title="ml_research_toolkit.datasets.uci"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ml_research_toolkit.datasets.uci</span></code></a> contains classes:
+- <a class="reference internal" href="#ml_research_toolkit.datasets.uci.UCI" title="ml_research_toolkit.datasets.uci.UCI"><code class="xref py py-class docutils literal notranslate"><span class="pre">ml_research_toolkit.datasets.uci.UCI</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ml_research_toolkit.datasets.uci.UCI">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ml_research_toolkit.datasets.uci.</span></span><span class="sig-name descname"><span class="pre">UCI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enforce</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.uci'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'https://archive.ics.uci.edu/ml/datasets.php'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ml_research_toolkit/datasets/uci.html#UCI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_research_toolkit.datasets.uci.UCI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for UCI datasets manager system.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ml_research_toolkit.datasets.uci.UCI.get_dataset">
+<span class="sig-name descname"><span class="pre">get_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enforce</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ml_research_toolkit/datasets/uci.html#UCI.get_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_research_toolkit.datasets.uci.UCI.get_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get dataset by given name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the dataset for downloading.</p></li>
+<li><p><strong>enforce</strong> (<em>bool</em>) – Enforce rewriting all metadata in 
+the cache or use cached data. 
+Default None: use initial value.</p></li>
+<li><p><strong>download</strong> (<em>bool</em>) – Download dataset or not. 
+If False and dataset is not presented than return None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ml_research_toolkit.datasets.uci.UCI.get_meta">
+<span class="sig-name descname"><span class="pre">get_meta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enforce</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ml_research_toolkit/datasets/uci.html#UCI.get_meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_research_toolkit.datasets.uci.UCI.get_meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get meta infromation about all datasets in the site.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>enforce</strong> (<em>bool</em>) – Enforce rewriting all metadata in 
+the cache or use cached data. 
+Default None: use initial value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
