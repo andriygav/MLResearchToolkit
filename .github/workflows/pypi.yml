@@ -1,12 +1,17 @@
 name: pypi
 
-on: [push]
+on:
+  workflow_run:
+    workflows: ["test", "docs"]
+    types: [completed]
+    branches: [master]
 
 jobs:
   pypi:
     name: pypi
     runs-on: ubuntu-latest
-    
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     strategy:
       matrix:
         python-version: [3.6]
